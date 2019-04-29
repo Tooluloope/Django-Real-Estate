@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-from django.conf.global_settings import EMAIL_HOST_PASSWORD, EMAIL_USE_TLS
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -147,8 +146,13 @@ MESSAGE_TAGS = {
 
 # Email Config
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAL_PORT = 587
-EMAIL_HOST_USER = 'adetulatolu@gmail.com'
-EMAIL_HOST_PASSWORD = 'wzrswphvzanipznp'
-EMAIL_USE_TLS = True
+EMAIL_HOST = ''
+EMAIL_PORT = 0
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = 0
+
+try:
+   from .dev_settings import *
+except ImportError:
+   pass
