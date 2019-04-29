@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from django.conf.global_settings import EMAIL_HOST_PASSWORD, EMAIL_USE_TLS
+from django.contrib.messages import constants as messages
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -35,6 +38,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -136,9 +140,15 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-#Messages
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     
 }
+
+# Email Config
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAL_PORT = 587
+EMAIL_HOST_USER = 'adetulatolu@gmail.com'
+EMAIL_HOST_PASSWORD = 'wzrswphvzanipznp'
+EMAIL_USE_TLS = True
