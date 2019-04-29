@@ -6,18 +6,15 @@
                         <span aria-hidden="true">&times;</span>
                 </button>
                 <strong>
-                    {% if message.level == DEFAULT_MESSAGE_LEVEL.ERROR %}
-                      Error
-                    
-                      {% else %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                      Error:                    
+                    {% else %}
                         {{message.tags | title}}
                     {% endif %}
                 </strong>
-                {{mesage}}
-
+                {{message}}
             </div>
         </div>
-      
     {% endfor %}
-  
 {% endif %}
+
