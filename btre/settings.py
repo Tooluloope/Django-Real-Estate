@@ -153,6 +153,6 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = 0
 
 try:
-   from .dev_settings import *
+   from .local_settings import *
 except ImportError:
    pass
