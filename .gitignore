@@ -13,7 +13,7 @@ db.sqlite3
 venv
 /static
 /btre_resources
-/btre/dev_settings
+/btre/local_settings
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
