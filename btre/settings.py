@@ -156,3 +156,10 @@ try:
    from .local_settings import *
 except ImportError:
    pass
+
+
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    
+}
